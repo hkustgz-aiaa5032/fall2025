@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIAA 5032 - Foundations of Artificial Intelligence</title>
+    <link rel="icon" href="./hkust-logo.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .course-info h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .course-info p {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        .section h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .class-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #A68137;
+        }
+
+        .info-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: #A68137;
+            color: white;
+            font-weight: bold;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .timeline-date {
+            background: #A68137;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .timeline-content {
+            margin-left: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-top: 20px;
+            }
+
+            .class-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="course-info">
+            <h1>AIAA 5032 (Fall 2025)</h1>
+            <h2>Foundations of Artificial Intelligence</h2>
+            <p><strong>Instructor:</strong> <a href="https://liliu-avril.github.io/">Li LIU</a></p>
+            <p><strong>Teaching Assistants:</strong></p>
+            <ul style="padding-left: 16px;">
+                <li>Tianxin XIE (txie151@connect.hkust-gz.edu.cn)</li>
+                <li>Beizhen ZHAO (bzhao610@connect.hkust-gz.edu.cn)</li>
+            </ul>
+        </div>
+        <div><img src="./hkust-gz.logo.CN.jpeg" alt="HKUST-GZ Logo" style="height: 100px; width: auto;">
+        </div>
+    </div>
+
+    <!-- Course Description Section -->
+    <div class="section">
+        <h3>Course Description</h3>
+        <p>This course provides a systematic introduction to the core concepts and cutting-edge developments in
+            artificial intelligence, covering a comprehensive range from foundations to applications. It begins with the
+            basic framework of AI—data, models, and tasks—followed by regression, classification, and the underlying
+            principles of optimization. The course highlights convolutional neural networks and object detection in
+            computer vision, as well as recurrent neural networks, Transformers, and large language models in natural
+            language processing. Generative models, including variational autoencoders, generative adversarial networks,
+            and diffusion models, are also introduced. Students will further explore few-shot learning and multimodal
+            learning to understand their potential in real-world scenarios. The human-computer interaction component
+            covers speech recognition and speech synthesis, demonstrating AI's practical value in interactive
+            technologies. In addition, the course introduces AI security, cultivating awareness of potential risks and
+            critical thinking skills. Balancing theory with practice, this course serves as a systematic
+            entry point and exploration platform for artificial intelligence.</p>
+    </div>
+
+    <!-- Target Students and Prerequisites Section -->
+    <div class="section">
+        <h3>Target Students & Prerequisites</h3>
+        <div>
+            <table style="width:auto; text-align:left; margin-left: 0;">
+                <tr>
+                    <td style="width:180px;"><strong>Target Students:</strong></td>
+                    <td style="width:auto;">Graduate students in computer science or related fields</td>
+                </tr>
+                <tr>
+                    <td><strong>Prerequisites:</strong></td>
+                    <td>Basic knowledge of Python programming, linear algebra, and probabilities</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Class Information Section -->
+    <div class="section">
+        <h3>Lecture</h3>
+        <div>
+            <table style="width:auto; text-align:left; margin-left: 0;">
+                <tr>
+                    <td style="width:180px;"><strong>Class Time:</strong></td>
+                    <td style="width:auto;">Thursday 09:00 - 11:50</td>
+                </tr>
+                <tr>
+                    <td><strong>Location:</strong></td>
+                    <td>Room 101, E1</td>
+                </tr>
+                <tr>
+                    <td><strong>Course Period:</strong></td>
+                    <td>09/01 - 12/05</td>
+                </tr>
+                <tr>
+                    <td><strong>Canvas:</strong></td>
+                    <td><a href="https://hkust-gz.instructure.com/courses/2110">Canvas Course Page</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Class Type:</strong></td>
+                    <td>In-Person Course</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Course Work Section -->
+    <div class="section">
+        <h3>Course Work & Assessment</h3>
+        <div>
+            <table style="width:auto; text-align:left; margin-left: 0;">
+                <tr>
+                    <td style="width:180px; vertical-align: top;"><strong>Score Assessment:</strong></td>
+                    <td style="width:auto; vertical-align: top;">Individual assignments (50%) + final group oral
+                        presentation (50%)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;"><strong>Assignments:</strong></td>
+                    <td style="vertical-align: top;">
+                        <ul style="padding-left: 16px;">
+                            <li>There will be two individual homework assignments during the semester.</li>
+                            <li>All submissions must be made via Canvas.</li>
+                            <li>Assignments submitted by the deadline receive full credit. Late submissions are eligible
+                                for up to 75% credit within 48 hours, and up to 50% credit thereafter, unless an
+                                extension has been granted in advance.</li>
+                            <li>If you need an extension, please request it as soon as possible. Prompt requests are
+                                more likely to be approved.</li>
+                            <li>Homework is strictly individual work-you may not view others' code or search for similar
+                                solutions online.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;"><strong>Final Presentation:</strong></td>
+                    <td style="vertical-align: top;">
+                        <ul style="padding-left: 16px;">
+                            <li>The final oral presentation will be done in groups of 3 students.</li>
+                            <li>This group presentation accounts for 50% of your final grade.</li>
+                            <li>More details about the presentation requirements will be provided during the course.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Course Schedule Section -->
+    <div class="section">
+        <h3>Course Schedule</h3>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Date</th>
+                    <th>Topic</th>
+                    <th>Instructor</th>
+                    <th>Events</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>09/04</td>
+                    <td>Introduction to AI: Concept, Data, Model and Task</td>
+                    <td>Li Liu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>09/11</td>
+                    <td>Regression and Classification</td>
+                    <td>Li Liu</td>
+                    <td>Assignment 1 <span style="color: green; font-weight: bold;">out</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>09/18</td>
+                    <td>Optimization</td>
+                    <td>Li Liu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>09/25</td>
+                    <td>CNN and Object Detection</td>
+                    <td>Li Liu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><span style="color: #A68137;">Tutorial Session on Assignment 1</span></td>
+                    <td>Tianxin XIE, Beizhen ZHAO</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>10/02</td>
+                    <td><span style="color: gray;">National Day, no class</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>10/09</td>
+                    <td>RNN, Transformer and LLM</td>
+                    <td>Li Liu</td>
+                    <td>Assignment 1 <span style="color: red; font-weight: bold;">due</span></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>10/16</td>
+                    <td>VAEs and GANs</td>
+                    <td>Li Liu</td>
+                    <td>Assignment 2 <span style="color: green; font-weight: bold;">out</span></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>10/23</td>
+                    <td>Diffusion Model</td>
+                    <td>Li Liu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>10/30</td>
+                    <td>Introduction to Few-shot Learning</td>
+                    <td>Li Liu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>TBD</td>
+                    <td><span style="color: #A68137;">Tutorial Session on Assignment 2</span></td>
+                    <td>Tianxin XIE, Beizhen ZHAO</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>11/06</td>
+                    <td>Introduction to Multimodal Learning</td>
+                    <td>Li Liu</td>
+                    <td>Assignment 2 <span style="color: red; font-weight: bold;">due</span></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>11/13</td>
+                    <td>Human Computer Interaction: Speech Recognition</td>
+                    <td>Li Liu</td>
+                    <td>Final project <span style="color: green; font-weight: bold;">out</span></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>11/20</td>
+                    <td>Human Computer Interaction: Speech Synthesis</td>
+                    <td>Li Liu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>11/27</td>
+                    <td>Introduction to AI security</td>
+                    <td>Li Liu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>12/04</td>
+                    <td>Final Project Presentation</td>
+                    <td>Li Liu</td>
+                    <td>Final presentation</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Guidelines Section -->
+    <div class="section">
+        <h3>Course Guidelines & Policies</h3>
+
+        <table style="width:auto; text-align:left; margin-left: 0;">
+            <tr>
+                <td style="width:180px; vertical-align: top;"><strong>Collaboration Policy:</strong></td>
+                <td style="width:auto; vertical-align: top;">
+                    <ul style="padding-left: 16px;">
+                        <li>We encourage collaboration between students and studying materials in groups when the
+                            purpose of this is to facilitate learning, not to circumvent problems. It is allowed to seek
+                            help from other students in understanding the material needed to solve a particular problem.
+                        </li>
+                        <li>However, students must submit individual material and solutions, unless otherwise specified.
+                            Students should declare any collaboration on the first page of homework assignments (or
+                            equivalently on exercises).</li>
+                        <li>If the instructors believe the collaboration is improper, your grade may be affected.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>AI Tools & ChatGPT Usage Policy:</strong></td>
+                <td style="vertical-align: top;">
+                    <ul style="padding-left: 16px;">
+                        <li>We encourage you to use ChatGPT to solve the homework assignment problems (because likely in
+                            the future everyone will use it for coding).</li>
+                        <li>However, you will need to declare using ChatGPT/LLMs in the homework write-up, as well as
+                            the prompts you use.</li>
+                        <li>Direct submission of AI-generated code without understanding is prohibited.</li>
+                        <li>Note that AI tools should supplement, not replace, learning and problem-solving skills.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Communication & Participation:</strong></td>
+                <td style="vertical-align: top;">
+                    <ul style="padding-left: 16px;">
+                        <li>Regular attendance and participation are expected</li>
+                        <li>Questions and discussions are encouraged during class</li>
+                        <li>Email responses from TAs within 24 hours on weekdays</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
